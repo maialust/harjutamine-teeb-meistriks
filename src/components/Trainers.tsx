@@ -1,0 +1,96 @@
+import { ArrowUpRight, GraduationCap } from "lucide-react";
+import { trainers } from "../data/course";
+import { SectionHeading } from "./SectionHeading";
+
+const gradients = [
+  "from-coral-400 via-sun-400 to-sun-300",
+  "from-violet-500 via-violet-400 to-teal-400",
+  "from-teal-400 via-teal-300 to-sun-300",
+];
+
+export function Trainers() {
+  return (
+    <section id="koolitajad" aria-labelledby="koolitajad-title" className="bg-white py-20 sm:py-28">
+      <div className="container-page">
+        <SectionHeading
+          id="koolitajad-title"
+          eyebrow="Koolitajad"
+          tone="coral"
+          title="Kes koolitust läbi viivad?"
+          lead="Kõigil koolitajatel on pikaajaline õpetamiskogemus üldhariduses ja/või kõrghariduses, sealhulgas õpetajakoolituse erialadel."
+        />
+
+        <ul className="mt-12 grid gap-5 md:grid-cols-3">
+          {trainers.map((t, i) => (
+            <li
+              key={t.name}
+              className="reveal card flex flex-col gap-6 p-7"
+              style={{ ["--delay" as string]: `${i * 100}ms` }}
+            >
+              {t.photo ? (
+                <img
+                  src={`${import.meta.env.BASE_URL}${encodeURIComponent(t.photo)}`}
+                  alt={`Koolitaja ${t.name}`}
+                  width={112}
+                  height={112}
+                  loading="lazy"
+                  className="size-28 shrink-0 rounded-3xl bg-white object-cover ring-1 ring-line"
+                />
+              ) : (
+                <span
+                  className={`grid size-28 shrink-0 place-items-center rounded-3xl bg-gradient-to-br text-navy-950 ${gradients[i % gradients.length]}`}
+                  aria-hidden="true"
+                >
+                  <GraduationCap className="size-11" strokeWidth={1.6} />
+                </span>
+              )}
+              <div>
+                <h3 className="text-2xl font-extrabold tracking-tight text-navy-900">{t.name}</h3>
+                {t.role && <p className="mt-1 leading-snug font-semibold text-teal-700">{t.role}</p>}
+                {t.bio && <p className="mt-3 leading-relaxed text-muted">{t.bio}</p>}
+                <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+                  {t.profile && (
+                    <a
+                      href={t.profile}
+                      target="_blank"
+                      rel="noopener"
+                      className="inline-flex items-center gap-1.5 text-sm font-bold text-violet-700 underline-offset-4 hover:text-navy-900 hover:underline"
+                    >
+                      ETIS
+                      <ArrowUpRight className="size-4" aria-hidden="true" />
+                      <span className="sr-only"> — {t.name} (avaneb uues aknas)</span>
+                    </a>
+                  )}
+                  {t.orcid && (
+                    <a
+                      href={t.orcid}
+                      target="_blank"
+                      rel="noopener"
+                      className="inline-flex items-center gap-1.5 text-sm font-bold text-violet-700 underline-offset-4 hover:text-navy-900 hover:underline"
+                    >
+                      ORCID
+                      <ArrowUpRight className="size-4" aria-hidden="true" />
+                      <span className="sr-only"> — {t.name} (avaneb uues aknas)</span>
+                    </a>
+                  )}
+                  {t.portfolio && (
+                    <a
+                      href={t.portfolio}
+                      target="_blank"
+                      rel="noopener"
+                      className="inline-flex items-center gap-1.5 text-sm font-bold text-violet-700 underline-offset-4 hover:text-navy-900 hover:underline"
+                    >
+                      Meisterõpetaja portfoolio
+                      <ArrowUpRight className="size-4" aria-hidden="true" />
+                      <span className="sr-only"> — {t.name} (avaneb uues aknas)</span>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
