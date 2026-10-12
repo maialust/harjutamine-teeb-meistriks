@@ -25,7 +25,7 @@ export function Format() {
       note: `Igaüks ${course.contactDays.hoursEach} akadeemilist tundi`,
     },
     { icon: Laptop, label: "Veebis", value: course.tools.learning, note: "Õpipäevik, foorumid, õppematerjalid ja juhised" },
-    { icon: UsersRound, label: "Grupi suurus", value: `Kuni ${course.maxParticipants} osalejat`, note: "Ruumi aruteluks ja koostööks" },
+    { icon: UsersRound, label: "Grupi suurus", value: course.groupSize, note: "Ruumi aruteluks ja koostööks" },
     { icon: Languages, label: "Õppekeel", value: "Eesti keel", note: "Sihtrühm: üldhariduskoolide ja kutseõppe õpetajad" },
     { icon: Award, label: "Lõpetamisel", value: "Tunnistus", note: course.certificate },
   ];

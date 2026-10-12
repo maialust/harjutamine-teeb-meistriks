@@ -48,7 +48,7 @@ export function Hero() {
   const facts = [
     { icon: Clock, label: `${course.volume.total} akadeemilist tundi` },
     { icon: MapPin, label: `${course.contactDays.count} õppepäeva · ${course.location}` },
-    { icon: UsersRound, label: `Kuni ${course.maxParticipants} osalejat` },
+    { icon: UsersRound, label: course.groupSize },
   ];
 
   return (

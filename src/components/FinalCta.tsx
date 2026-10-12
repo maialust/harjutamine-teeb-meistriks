@@ -6,7 +6,7 @@ export function FinalCta() {
   const chips = [
     { icon: Clock, label: `${course.volume.total} ak tundi` },
     { icon: MapPin, label: "Tartu · 4 õppepäeva" },
-    { icon: UsersRound, label: `Kuni ${course.maxParticipants} osalejat` },
+    { icon: UsersRound, label: course.groupSize },
     ...(groups.length ? [{ icon: CalendarDays, label: groups.map((g) => g.period).join(" · ") }] : [{ icon: CalendarDays, label: "Aeg Haridusportaalis" }]),
   ];
 

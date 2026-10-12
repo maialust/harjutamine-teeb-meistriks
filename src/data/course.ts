@@ -35,7 +35,9 @@ export const course = {
   language: "eesti keel",
   location: "Tartu",
   format: "Auditoorne õpe ja iseseisev töö",
-  maxParticipants: 25,
+  minParticipants: 16,
+  maxParticipants: 28,
+  groupSize: "16–28 osalejat", // kuvatakse lehel
   certificate: "Tartu Ülikooli täiendusõppe tunnistus",
   audience: "Üldhariduskoolide ja kutseõppe õpetajad",
   volume: {
@@ -195,8 +197,8 @@ export const benefits: { icon: IconKey; title: string; text: string }[] = [
   },
   {
     icon: "userSmall",
-    title: "Kuni 25 osalejat",
-    text: "Väike grupp jätab ruumi paaris- ja grupiaruteludeks, koostööks ja tagasisideks.",
+    title: "16–28 osalejat",
+    text: "Paras grupp paaris- ja grupiaruteludeks, koostööks ja tagasisideks.",
   },
   {
     icon: "messages",
@@ -378,7 +380,7 @@ export const faq: { q: string; a: string }[] = [
   },
   {
     q: "Kus koolitus toimub ja kui suur on grupp?",
-    a: "Õppepäevad toimuvad Tartus. Grupis on kuni 25 osalejat.",
+    a: "Õppepäevad toimuvad Tartus. Grupis on 16–28 osalejat.",
   },
   {
     q: "Millal koolitus toimub?",
@@ -403,5 +405,5 @@ export const seo = {
     "Praktiline täienduskoolitus üldhariduskoolide ja kutseõppe õpetajatele: GenAI põhialused, GenAI õppetöös, oma CustomGPT loomine ja tegevusuuring. 78 ak tundi, Tartu Ülikool.",
   ogTitle: "Harjutamine teeb meistriks: GenAI klassiruumis",
   ogDescription:
-    "Tartu Ülikooli täienduskoolitus õpetajatele: neli praktilist õppepäeva, oma CustomGPT ja tegevusuuringu kava. Kuni 25 osalejat.",
+    "Tartu Ülikooli täienduskoolitus õpetajatele: neli praktilist õppepäeva, oma CustomGPT ja tegevusuuringu kava. Grupis 16–28 osalejat.",
 };

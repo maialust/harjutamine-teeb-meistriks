@@ -48,7 +48,7 @@ export function Benefits() {
           <div className="relative flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
               <p className="text-2xl font-extrabold tracking-tight">Valmis viima GenAI oma klassiruumi läbimõeldult?</p>
-              <p className="mt-2 text-navy-100">Neli praktilist õppepäeva Tartus, kuni 25 osalejat grupis.</p>
+              <p className="mt-2 text-navy-100">Neli praktilist õppepäeva Tartus, grupis 16–28 osalejat.</p>
             </div>
             <RegisterButton size="lg" className="shrink-0" />
           </div>
